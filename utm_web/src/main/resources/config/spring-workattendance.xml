@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+    <!-- Spring管理Struts2的Action -->
+    <bean name="studentWorkattenceAction" class="com.utm.workattendance.action.StudentWorkattenceAction" scope="prototype" />
+    <bean name="teacherWorkattenceAction" class="com.utm.workattendance.action.TeacherWorkattenceAction" scope="prototype" />
+
+    <bean name="workattenceService" class="com.utm.workattendance.service.impl.WorkattenceServiceImpl" />
+    <bean name="workattenceDao" class="com.utm.workattendance.dao.impl.WorkattenceDaoImpHibernate" />
+
+
+    <bean name="studentAction" class="com.utm.workattendance.action.StudentAction" scope="prototype" />
+    <bean name="studentService" class="com.utm.workattendance.service.impl.StudentServiceImpl" />
+    <bean name="studentDao" class="com.utm.workattendance.dao.impl.StudentDaoImpHibernate" />
+
+
+    <bean name="teacherAction" class="com.utm.workattendance.action.TeacherAction" scope="prototype" />
+    <bean name="teacherService" class="com.utm.workattendance.service.impl.TeacherServiceImpl" />
+    <bean name="teacherDao" class="com.utm.workattendance.dao.impl.TeacherDaoImpHibernate" />
+
+
+    <bean name="mainWorkattenceAction" class="com.utm.workattendance.action.MainWorkattence" scope="prototype" />
+    <bean name="mainWorkattenceService" class="com.utm.workattendance.service.impl.MainWorkattenceServiceImpl" />
+
+    <bean name="LoginForAndroidAction" class="com.utm.workattendance.action.LoginForAndroid" scope="prototype" />
+    <bean name="AndroidMainWorkattenceAction" class="com.utm.workattendance.action.AndroidMainWorkattence" scope="prototype" />
+
+
+</beans>

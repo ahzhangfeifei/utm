@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <!-- 将Action的创建交给spring来管理 -->
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <!-- 更改struts2请求Action的后缀名，默认为action。若想去掉后缀，设为","即可 -->
+    <constant name="struts.action.extension" value="do,action,"></constant>
+
+    <!-- 包含的配置文件 -->
+    <include file="config/struts-*.xml" />
+
+    <!-- 公共包 -->
+    <package name="abstract_struts" abstract="true" extends="struts-default"
+             namespace="/">
+        <interceptors>
+            <interceptor name="checkLogin" class="checkLoginInterceptor"/>
+            <interceptor-stack name="myInterceptor">
+                <interceptor-ref name="checkLogin"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <!--设置所有Action自动调用的拦截器堆栈-->
+        <default-interceptor-ref name="myInterceptor" />
+
+        <global-results>
+            <result name="checkLoginFail">/login.jsp</result>
+        </global-results>
+    </package>
+
+</struts>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+ <package name="studentMgr" namespace="/student" extends="abstract_struts">
+ 		<global-results>
+ 			 <result name="student_list">/page/student/student_list.jsp</result>
+ 		</global-results>
+ 		
+      <action name="addStudentAction" class="studentAction" method="addStudent" />
+      <action name="updateStudentAction" class="studentAction" method="updateStudent" />
+      <action name="deleteStudentByIdAction" class="studentAction" method="deleteStudentById" />
+      <action name="deleteStudentByArrayAction" class="studentAction" method="deleteStudentByArray" />
+      <action name="queryStudentAction" class="studentAction" method="queryStudent" />
+      <action name="exportStudentAction" class="studentAction" method="exportStudent" />
+
+      <action name="showAddStudentAction">
+      		<result>/page/student/student_add.jsp</result>
+      </action>
+      <action name="showUpdateStudentAction"  class="studentAction" method="showUpdateStudent" >
+      		<result name="student_update">/page/student/student_update.jsp</result>
+      </action>
+  </package>
+
+    <package name="teacherMgr" namespace="/teacher" extends="abstract_struts">
+        <global-results>
+            <result name="teacher_list">/page/teacher/teacher_list.jsp</result>
+        </global-results>
+
+        <action name="addTeacherAction" class="teacherAction" method="addTeacher" />
+        <action name="updateTeacherAction" class="teacherAction" method="updateTeacher" />
+        <action name="deleteTeacherByIdAction" class="teacherAction" method="deleteTeacherById" />
+        <action name="deleteTeacherByArrayAction" class="teacherAction" method="deleteTeacherByArray" />
+        <action name="queryTeacherAction" class="teacherAction" method="queryTeacher" />
+        <action name="exportTeacherAction" class="teacherAction" method="exportTeacher" />
+
+        <action name="showAddTeacherAction">
+            <result>/page/teacher/teacher_add.jsp</result>
+        </action>
+        <action name="showUpdateTeacherAction"  class="teacherAction" method="showUpdateTeacher" >
+            <result name="teacher_update">/page/teacher/teacher_update.jsp</result>
+        </action>
+    </package>
+
+    <package name="teacherWorkattenceMgr" namespace="/workattence" extends="abstract_struts">
+
+        <action name="addTeacherWorkattenceAction" class="teacherWorkattenceAction" method="addWorkattence" />
+        <action name="updateTeacherWorkattenceAction" class="teacherWorkattenceAction" method="updateWorkattence" />
+        <action name="deleteTeacherWorkattenceByIdAction" class="teacherWorkattenceAction" method="deleteWorkattenceById" />
+        <action name="deleteTeacherWorkattenceByArrayAction" class="teacherWorkattenceAction" method="deleteWorkattenceByArray" />
+        <action name="exportTeacherWorkattenceAction" class="teacherWorkattenceAction" method="exportTeacherWorkattence" />
+
+
+        <action name="queryTeacherWorkattenceAction" class="teacherWorkattenceAction" method="queryWorkattence" >
+            <result name="workattence_list">/page/workattence/teacher_workattence_list.jsp</result>
+        </action>
+
+        <action name="showAddTeacherWorkattenceAction">
+            <result>/page/workattence/teacher_workattence_add.jsp</result>
+        </action>
+        <action name="showUpdateTeacherWorkattenceAction"  class="teacherWorkattenceAction" method="showUpdateWorkattence" >
+            <result name="workattence_update">/page/workattence/teacher_workattence_update.jsp</result>
+        </action>
+    </package>
+
+    <package name="studentWorkattenceMgr" namespace="/workattence" extends="abstract_struts">
+
+        <action name="addStudentWorkattenceAction" class="studentWorkattenceAction" method="addWorkattence" />
+        <action name="updateStudentWorkattenceAction" class="studentWorkattenceAction" method="updateWorkattence" />
+        <action name="deleteStudentWorkattenceByIdAction" class="studentWorkattenceAction" method="deleteWorkattenceById" />
+        <action name="deleteStudentWorkattenceByArrayAction" class="studentWorkattenceAction" method="deleteWorkattenceByArray" />
+        <action name="exportStudentWorkattenceAction" class="studentWorkattenceAction" method="exportStudentWorkattence" />
+
+        <action name="queryStudentWorkattenceAction" class="studentWorkattenceAction" method="queryWorkattence" >
+          <result name="workattence_list">/page/workattence/student_workattence_list.jsp</result>
+        </action>
+
+        <action name="showAddStudentWorkattenceAction">
+            <result>/page/workattence/student_workattence_add.jsp</result>
+        </action>
+        <action name="showUpdateStudentWorkattenceAction"  class="studentWorkattenceAction" method="showUpdateWorkattence" >
+            <result name="workattence_update">/page/workattence/student_workattence_update.jsp</result>
+        </action>
+    </package>
+
+    <package name="mainWorkattenceMgr" namespace="/workattence" extends="abstract_struts">
+
+        <action name="showMainWorkattenceAction" class="mainWorkattenceAction"  method="showMainWorkattence">
+            <result name="main_workattence">/page/workattence/main_workattence.jsp</result>
+        </action>
+
+        <action name="mainWorkattenceAction" class="mainWorkattenceAction" method="work" >
+            <result name="main_workattence">/page/workattence/main_workattence.jsp</result>
+        </action>
+
+    </package>
+
+
+    <!--1.将当前package的extends属性改为"json-default"，即让当前package从josn-default继承而不是struts-default继承-->
+    <package name="androidLoginMgr" namespace="/workattence" extends="json-default">
+        <!--2.但如果当前package确实无法继承"json-default"的话，还可以在当前package中定义result-type，将json给加进去-->
+        <!--<result-types>-->
+            <!--<result-type name="json" class="org.apache.struts2.json.JSONResult"/>-->
+        <!--</result-types>-->
+        <action name="LoginForAndroidAction" class="LoginForAndroidAction"  method="login">
+            <result type="json" ></result>
+        </action>
+    </package>
+
+    <package name="androidMainWorkattenceMgr" namespace="/workattence" extends="json-default">
+        <action name="AndroidMainWorkattenceAction" class="AndroidMainWorkattenceAction"  method="work">
+            <result type="json" ></result>
+        </action>
+    </package>
+
+</struts>

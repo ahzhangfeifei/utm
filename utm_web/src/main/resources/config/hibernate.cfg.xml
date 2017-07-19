@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+
+    <!--Spring 3 这种方式加hibernate4 报错  Cannot unwrap to requested type [javax.sql.DataSource]-->
+
+	<session-factory>
+        <!--oracle 数据源配置-->
+		<!--<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>-->
+		<!--<property name="hibernate.connection.password">ssh</property>-->
+		<!--<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>-->
+		<!--<property name="hibernate.connection.username">ssh</property>-->
+        <!--<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>-->
+
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/utm?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="hibernate.connection.username">utm</property>
+        <property name="hibernate.connection.password">utm</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+	
+		<!--<mapping class="com.utmer.entity.UserEntity"/>-->
+	</session-factory>
+	
+	
+</hibernate-configuration>

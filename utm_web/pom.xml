@@ -6,25 +6,16 @@
     <groupId>com.utm</groupId>
     <artifactId>utm_web</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
-        <!-- 必须修改===》begin -->
-        <!-- 需要将此处的路径改为自己的jdk安装路径 -->
+        <!-- 需要将此处的路径改为系统的jdk安装路径 -->
         <java.home>${env.JAVA_HOME}</java.home>
-        <!-- jboss要目录 -->
-        <!--<jboss.home>${env.JBOSS_HOME}</jboss.home>-->
-        <!-- 必须修改===》end -->
-
-        <!-- 私服器地址 -->
-        <!--<nexus.url>http://192.168.24.252:8081/nexus/content/repositories</nexus.url> -->
-        <!-- 使用cargo插件时，发布项目所用端口 -->
-        <!-- <cargo.port>8081</cargo.port> -->
-
 
         <!-- 构建项目时资源使用的编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!--<checkstyle.config.location>src/config/tgb-check.xml</checkstyle.config.location>-->
+        <!-- checkStyle配置 -->
+        <!--<checkstyle.config.location>src/config/checkstyle.xml</checkstyle.config.location>-->
 
         <!--版本信息-->
         <!-- spring版本 -->
@@ -37,10 +28,7 @@
         <!-- struts2版本 -->
         <struts.version>2.3.4.1</struts.version>
         <jstl.version>1.2</jstl.version>
-
-
     </properties>
-
 
     <dependencies>
         <dependency>
@@ -334,7 +322,6 @@
         </dependency>
 
     </dependencies>
-
 
     <build>
         <finalName>utm_web</finalName>

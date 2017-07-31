@@ -49,7 +49,7 @@
 				<input type="text" name="student.familyphone" value="" size="30" maxlength="20" class="phone" />
 			</div>
 			<div class="unit">
-				<label>学生电话：</label>
+				<label>电话：</label>
 				<input type="text" name="student.phone" value="" size="30" maxlength="20" class="phone required" />
 			</div>
 			<div class="unit">

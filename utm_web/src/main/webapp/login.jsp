@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>考勤管理平台</title>
+<title>后台管理</title>
 <link href="${contextPath }/styles/dwz/themes/css/login.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -48,14 +48,14 @@
 			<div class="login_banner"><img src="${contextPath }/styles/dwz/themes/default/images/login_banner.jpg" /></div>
 			<div class="login_main">
 				<%--<ul class="helpList">--%>
-					<%--<li><a href="#">什么是高校管理平台</a></li>--%>
+					<%--<li><a href="#">什么是后台管理平台</a></li>--%>
 					<%--<li><a href="#">该平台可以为您提供的服务？</a></li>--%>
 					<%--<li><a href="#">忘记密码怎么办？</a></li>--%>
 					<%--<li><a href="#">为什么登录失败？</a></li>--%>
 				<%--</ul>--%>
 				<%--<div class="login_inner">--%>
-					<%--<p>高校管理平台，使得开发高校系统更快捷、高校</p>--%>
-					<%--<p>高校管理平台，使得开发高校系统更快捷、高校</p>--%>
+					<%--<p>后台管理平台，使得开发系统更快捷、高效</p>--%>
+					<%--<p>后台管理平台，使得开发系统更快捷、高效</p>--%>
 				<%--</div>--%>
 			</div>
 		</div>
